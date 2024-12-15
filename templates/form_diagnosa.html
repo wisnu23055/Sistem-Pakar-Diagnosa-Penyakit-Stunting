@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pakar Stunting</title>
+    <link rel="stylesheet" href="/static/style_form.css">
+</head>
+<body>
+    <h1>Form Pengisian</h1>
+    <div class="guide-popup" id="guidePopup">
+        <div class="popup-header">
+            <h3>Panduan Pengisian</h3>
+        </div>
+        <p>Hai, anda hanya perlu mencentang gejala penyakit yang dirasa sedang mengalaminya dan memilih salah satu dari 6 jawaban yang tersedia. Jika dirasa sudah, klik tombol diagnosa untuk melihat hasil diagnosa.</p>
+        <button onclick="closePopup()">Ok</button>
+    </div>
+    <div class="guidance-text" onclick="showPanduanPopup()">Lihat Panduan Pengisian</div>
+    <form action="/diagnosis" method="post">
+        {% for kode, deskripsi in gejala.items() %}
+            <label>
+                <input type="checkbox" name="gejala" value="{{ kode }}">
+                {{ deskripsi }}
+            </label><br>
+            <label for="{{ kode }}">Tingkat Kepastian:</label>
+            <select name="{{ kode }}">
+                <option value="1.0">Sangat Yakin</option>
+                <option value="0.8">Yakin</option>
+                <option value="0.6">Kemungkinan Besar</option>
+                <option value="0.4">Sedikit Yakin</option>
+                <option value="0.2">Tidak Tahu</option>
+                <option value="0">Tidak</option>
+            </select><br><br>
+        {% endfor %}
+        <input type="submit" value="Diagnosa">
+    </form>
+    <script>
+        window.onload = function() {
+            document.getElementById('guidePopup').style.display = 'block';
+        }
+
+        function openPopup() {
+            document.getElementById('guidePopup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('guidePopup').style.display = 'none';
+        }
+
+        function showPanduanPopup() {
+            openPopup();
+        }
+    </script>
+</body>
+</html>
