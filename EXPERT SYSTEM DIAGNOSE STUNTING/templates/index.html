@@ -1,0 +1,31 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pakar Stunting</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Sistem Pakar Diagnosa Penyakit Stunting</h1>
+    <form action="/diagnosis" method="post">
+        {% for kode, deskripsi in gejala.items() %}
+            <label>
+                <input type="checkbox" name="gejala" value="{{ kode }}">
+                {{ deskripsi }}
+            </label><br>
+            <label for="{{ kode }}">Tingkat Kepastian:</label>
+            <select name="{{ kode }}">
+                <option value="1.0">Sangat Yakin</option>
+                <option value="0.8">Yakin</option>
+                <option value="0.6">Kemungkinan Besar</option>
+                <option value="0.4">Sedikit Yakin</option>
+                <option value="0.2">Tidak Tahu</option>
+                <option value="0">Tidak</option>
+            </select><br><br>
+        {% endfor %}
+        <input type="submit" value="Diagnosa">
+    </form>
+</body>
+</html>
