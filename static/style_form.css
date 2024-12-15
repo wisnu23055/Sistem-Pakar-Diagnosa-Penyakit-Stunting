@@ -1,76 +1,139 @@
+/* style_form.css */
+
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #ccdfe0;
-}
-
-h1 {
+    background: #e3f2fd;
     color: #333;
-    text-align: center;
 }
 
+/* Header */
+h1 {
+    color: #4a90e2;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Guide Popup */
 .guide-popup {
     display: none;
     position: fixed;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
+    width: 350px;
     background: white;
-    border: 1px solid #007BFF;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #4a90e2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 12px;
     z-index: 1000;
 }
 
 .guide-popup p {
     font-size: 1rem;
     margin: 0;
+    color: #333;
 }
 
 .guide-popup button {
     margin-top: 20px;
     padding: 10px 20px;
     border: none;
-    background: #007BFF;
+    background: #4a90e2;
     color: white;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
 }
 
 .guide-popup button:hover {
-    background: #0056b3;
+    background: #357ab7;
 }
 
+/* Guidance Text */
 .guidance-text {
-    color: #007BFF;
+    color: #4a90e2;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-top: 10px;
+    text-align: center;
+    display: block;
 }
 
 .guidance-text:hover {
     text-decoration: underline;
 }
 
+/* Form Container */
 form {
-    background-color: #6bc4c4;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(139, 208, 255);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
 }
 
 label {
     display: block;
     margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
 }
 
 input[type="text"], select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+select {
+    background: #f9f9f9;
+}
+
+input[type="submit"] {
+    background: #6cb0ff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: #2e9dff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        padding: 20px;
+        width: 90%;
+    }
+
+    input[type="submit"] {
+        font-size: 1rem;
+    }
 }
