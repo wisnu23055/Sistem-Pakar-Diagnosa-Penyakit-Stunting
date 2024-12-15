@@ -51,10 +51,16 @@ cf_pakar = {
 
 @app.route('/')
 def index():
-    return render_template('index.html', gejala=gejala)
+    return render_template('index.html')
+
+@app.route('/form', methods=['POST'])
+def form_pengisian():
+    nama = request.form.get('nama')
+    return render_template('form_diagnosa.html', nama=nama, gejala=gejala)
 
 @app.route('/diagnosis', methods=['POST'])
 def diagnosis():
+    nama = request.form.get('nama')
     gejala_terpilih = request.form.getlist('gejala')
     cf_user = {g: float(request.form[g]) for g in gejala_terpilih}
 
@@ -65,7 +71,7 @@ def diagnosis():
         hasil_diagnosis[penyakit[kode_penyakit]] = cf_diagnosis
 
     hasil_diagnosis = sorted(hasil_diagnosis.items(), key=lambda x: x[1], reverse=True)
-    return render_template('result.html', hasil_diagnosis=hasil_diagnosis)
+    return render_template('result.html', nama=nama, hasil_diagnosis=hasil_diagnosis)
 
 if __name__ == '__main__':
     app.run(debug=True)
