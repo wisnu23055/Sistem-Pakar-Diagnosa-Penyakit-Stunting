@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #ccdfe0;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.guide-popup {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background: white;
+    border: 1px solid #007BFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.guide-popup p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.guide-popup button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.guide-popup button:hover {
+    background: #0056b3;
+}
+
+.guidance-text {
+    color: #007BFF;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.guidance-text:hover {
+    text-decoration: underline;
+}
+
+form {
+    background-color: #6bc4c4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid
+}
