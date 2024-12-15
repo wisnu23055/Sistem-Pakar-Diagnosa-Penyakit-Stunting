@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.hero {
+    position: relative;
+    height: 320px;
+    background: url('/static/ganak.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.form-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-container label {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.form-container input {
+    width: 50%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.form-container button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+.system-info {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+footer {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
