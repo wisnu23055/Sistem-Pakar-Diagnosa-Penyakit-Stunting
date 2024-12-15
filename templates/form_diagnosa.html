@@ -17,6 +17,9 @@
     </div>
     <div class="guidance-text" onclick="showPanduanPopup()">Lihat Panduan Pengisian</div>
     <form action="/diagnosis" method="post">
+        <!-- Field hidden untuk nama -->
+        <input type="hidden" name="nama" value="{{ nama }}">
+        
         {% for kode, deskripsi in gejala.items() %}
             <label>
                 <input type="checkbox" name="gejala" value="{{ kode }}">
